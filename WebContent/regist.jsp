@@ -92,27 +92,27 @@
 		<table>
 			<tr>
 				<td>名前（姓）</td>
-				<td><input type="text" name="first_name"  maxlength="10" value=""/></td>
+				<td><input type="text" name="familyName"  maxlength="10" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>名前（名）</td>
-				<td><input type="text" name="last_name"  maxlength="10" value=""/></td>
+				<td><input type="text" name="lastName"  maxlength="10" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>カナ（姓）</td>
-				<td><input type="text" name="first_name_kana"  maxlength="10" value=""/></td>
+				<td><input type="text" name="firstNameKana"  maxlength="10" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>カナ（名）</td>
-				<td><input type="text" name="last_name_kana"  maxlength="10" value=""/></td>
+				<td><input type="text" name="lastNameKana"  maxlength="10" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>メールアドレス</td>
-				<td><input type="text" name="mail_address"  maxlength="100" value=""/></td>
+				<td><input type="text" name="mailAddress"  maxlength="100" value=""/></td>
 			</tr>
 
 			<tr>
@@ -130,7 +130,7 @@
 
 			<tr>
 				<td>郵便番号</td>
-				<td><input type="text" name="postal_code"  maxlength="7" value=""/></td>
+				<td><input type="text" name="postalCode"  maxlength="7" value=""/></td>
 			</tr>
 
 			<tr>

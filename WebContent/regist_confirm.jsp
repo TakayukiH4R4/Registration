@@ -89,6 +89,13 @@
 
 <main>
 <h1>アカウント確認画面</h1>
+	<s:form action="registCompleteAction">
+		<table>
+			<tr>
+				<td><s:property value="familyName" escape="false"/></td>
+			</tr>
+		</table>
+	</s:form>
 </main>
 
     <footer>
