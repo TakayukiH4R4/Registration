@@ -3,7 +3,6 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登録画面</title>
@@ -91,7 +90,7 @@
 <h1>アカウント確認画面</h1>
 	<h3>登録する内容は以下でよろしいですか</h3>
 		<table>
-			<s:form action="registCompleteAction">
+			<s:form action="RegistCompleteAction">
 				<tr>
 					<td><label>名前（姓）：</label></td>
 					<td><s:property value="familyName" escape="false"/></td>
@@ -141,9 +140,11 @@
 					<td><s:property value="authority" escape="false"/></td>
 				</tr>
 				<tr>
-					<td><s:submit value="登録する"/></td>
-					<td><s:submit action="BackRegistAction" value="前に戻る"/></td>
+					<td><s:submit  value="登録する"/></td>
 				</tr>
+			</s:form>
+			<s:form action="RegistAction">
+				<s:submit value="前に戻る"/>
 			</s:form>
 		</table>
 

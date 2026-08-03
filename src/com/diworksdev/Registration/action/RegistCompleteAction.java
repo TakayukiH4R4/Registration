@@ -6,6 +6,6 @@ public class RegistCompleteAction extends ActionSupport {
 	public String execute() {
 		return SUCCESS;
 	}
-
+	
 
 }
