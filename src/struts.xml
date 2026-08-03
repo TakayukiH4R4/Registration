@@ -17,5 +17,16 @@
 	<result name = "success">regist_confirm.jsp</result>
 </action>
 
+<action name = "BackRegistAction" class = "com.diworksdev.Registration.action.BackRegistAction" method = "execute">
+	<result name = "success">regist.jsp</result>
+</action>
+
+<!--
+<action name = "RegistCompleteAction" class = "com.diworksdev.Registration.action.RegistCompleteAction" method = "execute">
+	<result name = "success">regist_complete.jsp</result>
+	<result name = "error">regist.jsp</result>
+</action>
+-->
+
 	</package>
 </struts>

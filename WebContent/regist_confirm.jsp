@@ -142,7 +142,7 @@
 				</tr>
 				<tr>
 					<td><s:submit value="登録する"/></td>
-					<td><s:submit value="前に戻る"/></td>
+					<td><s:submit action="BackRegistAction" value="前に戻る"/></td>
 				</tr>
 			</s:form>
 		</table>
