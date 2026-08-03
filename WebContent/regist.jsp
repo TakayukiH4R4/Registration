@@ -102,7 +102,7 @@
 
 			<tr>
 				<td>カナ（姓）</td>
-				<td><input type="text" name="firstNameKana"  maxlength="10" value=""/></td>
+				<td><input type="text" name="familyNameKana"  maxlength="10" value=""/></td>
 			</tr>
 
 			<tr>
@@ -112,7 +112,7 @@
 
 			<tr>
 				<td>メールアドレス</td>
-				<td><input type="text" name="mailAddress"  maxlength="100" value=""/></td>
+				<td><input type="text" name="mail"  maxlength="100" value=""/></td>
 			</tr>
 
 			<tr>
