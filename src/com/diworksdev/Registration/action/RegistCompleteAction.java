@@ -20,16 +20,6 @@ public class RegistCompleteAction extends ActionSupport {
 	public String address2;
 	public int authority;
 
-	public String execute() throws SQLException {
-
-		RegistCompleteDAO registCompleteDAO = new RegistCompleteDAO();
-
-		registCompleteDAO.createUser(id, familyName, lastName, familyNameKana, lastNameKana, mail, password, gender, postalCode, prefecture, address1, address2, authority);
-
-		return SUCCESS;
-
-	}
-
 	// id
 	public String getId() {
 	    return id;
@@ -90,7 +80,6 @@ public class RegistCompleteAction extends ActionSupport {
 	public int getPostalCode() {
 	    return postalCode;
 	}
-
 	public void setPostalCode(int postalCode) {
 	    this.postalCode = postalCode;
 	}
@@ -121,5 +110,15 @@ public class RegistCompleteAction extends ActionSupport {
 	}
 	public void setAuthority(int authority) {
 	    this.authority = authority;
+	}
+
+	public String execute() throws SQLException {
+
+		RegistCompleteDAO registCompleteDAO = new RegistCompleteDAO();
+
+		registCompleteDAO.createUser(id, familyName, lastName, familyNameKana, lastNameKana, mail, password, gender, postalCode, prefecture, address1, address2, authority);
+
+		return SUCCESS;
+
 	}
 }

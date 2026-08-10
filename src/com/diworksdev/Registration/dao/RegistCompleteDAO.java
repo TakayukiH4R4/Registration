@@ -13,7 +13,7 @@ public class RegistCompleteDAO {
 	private Connection connection = dbConnector.getConnection();
 	private DateUtil dateUtil = new DateUtil();
 
-	private String sql = "INSERT INTO user_registration (id, family_name, last_name, family_name_kana, last_name_kana, mail, password, gender, postal_code, prefecture, address1, address2, authority, registered_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	private String sql = "INSERT INTO user_registration(id, family_name, last_name, family_name_kana, last_name_kana, mail, password, gender, postal_code, prefecture, address_1, address_2, authority, registered_time) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 	public void createUser(String id, String familyName, String lastName, String familyNameKana, String lastNameKana, String mail, String password, int gender, int postalCode, String prefecture, String address1, String address2, int authority) throws SQLException {
 	try {
@@ -32,7 +32,7 @@ public class RegistCompleteDAO {
 			preparedStatement.setString(12, address2);
 			preparedStatement.setInt(13, authority);
 			preparedStatement.setString(14, dateUtil.getDate());
-			preparedStatement.execute();
+			preparedStatement.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

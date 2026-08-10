@@ -89,8 +89,8 @@
 <main>
 <h1>アカウント確認画面</h1>
 	<h3>登録する内容は以下でよろしいですか</h3>
-		<table>
-			<s:form action="RegistCompleteAction">
+		<s:form action = "RegistCompleteAction">
+			<table>
 				<tr>
 					<td><label>名前（姓）：</label></td>
 					<td><s:property value="familyName" escape="false"/></td>
@@ -139,14 +139,13 @@
 					<td><label>アカウント権限：</label></td>
 					<td><s:property value="authorityText" escape="false"/></td>
 				</tr>
-				<tr>
-					<td><s:submit  value="登録する"/></td>
-				</tr>
-			</s:form>
-			<s:form action="RegistAction">
-				<s:submit value="前に戻る"/>
-			</s:form>
-		</table>
+				<s:submit value="登録する" />
+			</table>
+		</s:form>
+
+		<s:form action = "RegistAction">
+				<s:submit value="前に戻る" />
+		</s:form>
 
 </main>
 
