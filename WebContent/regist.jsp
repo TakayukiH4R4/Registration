@@ -123,8 +123,8 @@
 			<tr>
 				<td>性別</td>
 				<td>
-					<input type="radio" name="gender" value="男性" >男
-					<input type="radio" name="gender" value="女性" >女
+					<input type="radio" name="gender" value="0" >男
+					<input type="radio" name="gender" value="1" >女
 				</td>
 			</tr>
 
@@ -202,8 +202,8 @@
 				<td>アカウント権限</td>
 				<td>
 					<select name ="authority">
-						<option value="一般">一般</option>
-						<option value="管理者">管理者</option>
+						<option value="0">一般</option>
+						<option value="1">管理者</option>
 					</select>
 				</td>
 			</tr>

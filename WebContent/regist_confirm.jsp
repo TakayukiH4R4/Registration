@@ -117,7 +117,7 @@
 				</tr>
 				<tr>
 					<td><label>性別：</label></td>
-					<td><s:property value="gender" escape="false"/></td>
+					<td><s:property value="genderText" escape="false"/></td>
 				</tr>
 				<tr>
 					<td><label>郵便番号：</label></td>
@@ -137,7 +137,7 @@
 				</tr>
 				<tr>
 					<td><label>アカウント権限：</label></td>
-					<td><s:property value="authority" escape="false"/></td>
+					<td><s:property value="authorityText" escape="false"/></td>
 				</tr>
 				<tr>
 					<td><s:submit  value="登録する"/></td>

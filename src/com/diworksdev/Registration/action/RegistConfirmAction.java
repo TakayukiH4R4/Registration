@@ -9,12 +9,12 @@ public class RegistConfirmAction extends ActionSupport {
 	private String lastNameKana;
 	private String mail;
 	private String password;
-	private String gender;
+	private int gender;
 	private int postalCode;
 	private String prefecture;
 	private String address1;
 	private String address2;
-	private String authority;
+	private int authority;
 
 
 	public String execute() {
@@ -64,10 +64,10 @@ public class RegistConfirmAction extends ActionSupport {
 		this.password = password;
 	}
 
-	public String getGender() {
+	public int getGender() {
 		return gender;
 	}
-	public void setGender(String gender) {
+	public void setGender(int gender) {
 		this.gender = gender;
 	}
 
@@ -99,12 +99,27 @@ public class RegistConfirmAction extends ActionSupport {
 		this.address2 = address2;
 	}
 
-	public String getAuthority() {
+	public int getAuthority() {
 		return authority;
 	}
-	public void setAuthority(String authority) {
+	public void setAuthority(int authority) {
 		this.authority = authority;
 	}
 
+	public String getGenderText() {
+		if (gender == 0) {
+			return  "男性";
+		} else if (gender == 1) {
+			return  "女性";
+		} return "";
+	}
+
+	public String getAuthorityText() {
+		if (authority == 0) {
+			return  "一般";
+		} else if (authority == 1) {
+			return  "管理者";
+		} return "";
+	}
 
 }
