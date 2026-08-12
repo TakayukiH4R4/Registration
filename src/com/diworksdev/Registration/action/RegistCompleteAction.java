@@ -1,12 +1,14 @@
 package com.diworksdev.Registration.action;
 
 import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
 
 import com.diworksdev.Registration.dao.RegistCompleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class RegistCompleteAction extends ActionSupport {
-	public String id;
+public class RegistCompleteAction extends ActionSupport implements SessionAware {
 	public String familyName;
 	public String lastName;
 	public String familyNameKana;
@@ -19,14 +21,30 @@ public class RegistCompleteAction extends ActionSupport {
 	public String address1;
 	public String address2;
 	public int authority;
+	public Map<String,Object>session;
 
-	// id
-	public String getId() {
-	    return id;
+	RegistCompleteDAO registCompleteDAO = new RegistCompleteDAO();
+
+	public String execute() throws SQLException {
+
+		registCompleteDAO.createUser(
+		session.get("familyName").toString(),
+		session.get("lastName").toString(),
+		session.get("familyNameKana").toString(),
+		session.get("lastNameKana").toString(),
+		session.get("mail").toString(),
+		session.get("password").toString(),
+		(Integer)session.get("gender"),
+		(Integer)session.get("postalCode"),
+		session.get("prefecture").toString(),
+		session.get("address1").toString(),
+		session.get("address2").toString(),
+		(Integer)session.get("authority")
+		);
+
+		return SUCCESS;
 	}
-	public void setId(String id) {
-	    this.id = id;
-	}
+
 	// familyName
 	public String getFamilyName() {
 	    return familyName;
@@ -112,13 +130,10 @@ public class RegistCompleteAction extends ActionSupport {
 	    this.authority = authority;
 	}
 
-	public String execute() throws SQLException {
-
-		RegistCompleteDAO registCompleteDAO = new RegistCompleteDAO();
-
-		registCompleteDAO.createUser(id, familyName, lastName, familyNameKana, lastNameKana, mail, password, gender, postalCode, prefecture, address1, address2, authority);
-
-		return SUCCESS;
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 
 	}
+
 }

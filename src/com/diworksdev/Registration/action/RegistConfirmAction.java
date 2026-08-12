@@ -1,8 +1,12 @@
 package com.diworksdev.Registration.action;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
-public class RegistConfirmAction extends ActionSupport {
+public class RegistConfirmAction extends ActionSupport implements SessionAware {
 	private String familyName;
 	private String lastName;
 	private String familyNameKana;
@@ -15,9 +19,24 @@ public class RegistConfirmAction extends ActionSupport {
 	private String address1;
 	private String address2;
 	private int authority;
+	public Map<String,Object> session;
 
 
 	public String execute() {
+
+		session.put("familyName",familyName);
+		session.put("lastName", lastName);
+		session.put("familyNameKana", familyNameKana);
+		session.put("lastNameKana", lastNameKana);
+		session.put("mail", mail);
+		session.put("password", password);
+		session.put("gender", gender);
+		session.put("postalCode", postalCode);
+		session.put("prefecture", prefecture);
+		session.put("address1", address1);
+		session.put("address2", address2);
+		session.put("authority", authority);
+
 		return SUCCESS;
 	}
 
@@ -120,6 +139,12 @@ public class RegistConfirmAction extends ActionSupport {
 		} else if (authority == 1) {
 			return  "管理者";
 		} return "";
+	}
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+
 	}
 
 }
