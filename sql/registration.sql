@@ -5,7 +5,7 @@ create database if not exists registration;
 use registration;
 
 
-drop table if exists  user_create;
+drop table if exists  user_registration;
 create table user_registration(
 	id int(100) primary key auto_increment,
 	family_name varchar(100),
