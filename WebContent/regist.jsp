@@ -92,32 +92,32 @@
 		<table>
 			<tr>
 				<td>名前（姓）</td>
-				<td><input type="text" name="familyName"  maxlength="10" value=""/></td>
+				<td><input type="text" name="familyName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>名前（名）</td>
-				<td><input type="text" name="lastName"  maxlength="10" value=""/></td>
+				<td><input type="text" name="lastName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>カナ（姓）</td>
-				<td><input type="text" name="familyNameKana"  maxlength="10" value=""/></td>
+				<td><input type="text" name="familyNameKana"  maxlength="10" pattern="^[ァ-ヶー]*$" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>カナ（名）</td>
-				<td><input type="text" name="lastNameKana"  maxlength="10" value=""/></td>
+				<td><input type="text" name="lastNameKana"  maxlength="10" pattern="^[ァ-ヶー]*$" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>メールアドレス</td>
-				<td><input type="text" name="mail"  maxlength="100" value=""/></td>
+				<td><input type="text" name="mail"  maxlength="100" pattern="^[a-zA-Z0-9-@.]*$" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>パスワード</td>
-				<td><input type="password" name="password" maxlength="10" value=""/></td>
+				<td><input type="password" name="password" maxlength="10"  pattern="^[a-zA-Z0-9]*$" value=""/></td>
 			</tr>
 
 			<tr>
@@ -130,7 +130,7 @@
 
 			<tr>
 				<td>郵便番号</td>
-				<td><input type="text" name="postalCode"  maxlength="7" value=""/></td>
+				<td><input type="text" name="postalCode"  maxlength="7" pattern="^[0-9]*$" value=""/></td>
 			</tr>
 
 			<tr>
