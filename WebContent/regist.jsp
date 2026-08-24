@@ -123,7 +123,7 @@
 			<tr>
 				<td>性別</td>
 				<td>
-					<input type="radio" name="gender" value="0" >男
+					<input type="radio" name="gender" value="0"  checked>男
 					<input type="radio" name="gender" value="1" >女
 				</td>
 			</tr>
