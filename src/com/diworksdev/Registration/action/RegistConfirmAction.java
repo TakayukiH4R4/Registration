@@ -20,10 +20,24 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 	private String address2;
 	private int authority;
 	public Map<String,Object> session;
+	private String errorMessage;
 
 
 	public String execute() {
+		String result = SUCCESS;
 
+	if(!(familyName.equals(""))&&
+			!(lastName.equals(""))&&
+			!(familyNameKana.equals(""))&&
+			!(lastNameKana.equals(""))&&
+			!(mail.equals(""))&&
+			!(password.equals(""))&&
+			!(gender == 0)&&
+			!(postalCode == 0)&&
+			!(prefecture.equals(""))&&
+			!(address1.equals(""))&&
+			!(address2.equals(""))&&
+			!(authority == 0)) {
 		session.put("familyName",familyName);
 		session.put("lastName", lastName);
 		session.put("familyNameKana", familyNameKana);
@@ -36,8 +50,11 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 		session.put("address1", address1);
 		session.put("address2", address2);
 		session.put("authority", authority);
-
-		return SUCCESS;
+			} else {
+				setErrorMessage("未入力の項目があります。");
+				result = ERROR;
+			}
+	return result;
 	}
 
 	//regist.jspで入力した内容をActionで保持することによってregistConfirm.jspの方に遷移される(setter/getter)//
@@ -125,6 +142,14 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 		this.authority = authority;
 	}
 
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 	public String getGenderText() {
 		if (gender == 0) {
 			return  "男性";
@@ -140,6 +165,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 			return  "管理者";
 		} return "";
 	}
+
 
 	@Override
 	public void setSession(Map<String, Object> session) {

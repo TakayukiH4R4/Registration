@@ -88,8 +88,11 @@
 
 <main>
 <h1>アカウント登録画面</h1>
-	<s:form action="RegistConfirmAction">
-		<table>
+	<s:if test="errorMessage !=''">
+		<s:property value="errorMessage" escape="false"/>
+	</s:if>
+	<table>
+		<s:form action="RegistConfirmAction">
 			<tr>
 				<td>名前（姓）</td>
 				<td><input type="text" name="familyName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/></td>
@@ -209,10 +212,8 @@
 			</tr>
 
 			<s:submit value="確認する"/>
-
-		</table>
-	</s:form>
-
+		</s:form>
+	</table>
 </main>
 
     <footer>
