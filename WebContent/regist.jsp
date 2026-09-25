@@ -190,12 +190,12 @@
 
 			<tr>
 				<td>住所（市区町村）</td>
-				<td><input type="text" name="address1"  maxlength="10" value=""/></td>
+				<td><input type="text" name="address1"  maxlength="10"  pattern="^[ぁ-んー一-龠々ァ-ヶー0-9- ]*$" value=""/></td>
 			</tr>
 
 			<tr>
 				<td>住所（番地）</td>
-				<td><input type="text" name="address2"  maxlength="10" value=""/></td>
+				<td><input type="text" name="address2"  maxlength="10" pattern="^[ぁ-んー一-龠々ァ-ヶー0-9- ]*$" value=""/></td>
 			</tr>
 
 			<tr>
