@@ -95,9 +95,13 @@
 		<s:form action="RegistConfirmAction">
 			<tr>
 				<td>名前（姓）</td>
-				<td><input type="text" name="familyName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/></td>
+				<td><input type="text" name="familyName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/>
+					<!-- 空欄だった場合のエラーメッセージ表示 -->
+					<s:if test="errorFamilyName != ''">
+						<br><s:property value="errorFamilyName" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
-
 			<tr>
 				<td>名前（名）</td>
 				<td><input type="text" name="lastName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/></td>

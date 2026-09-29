@@ -21,6 +21,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 	private int authority;
 	public Map<String,Object> session;
 	private String errorMessage;
+	private String errorFamilyName;
 
 
 	public String execute() {
@@ -54,8 +55,14 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 				setErrorMessage("未入力の項目があります。");
 				result = ERROR;
 			}
+
+		if(familyName.equals("")) {
+			errorFamilyName="名前（姓）が未入力です。";
+		}
+
 	return result;
 	}
+
 
 	//regist.jspで入力した内容をActionで保持することによってregistConfirm.jspの方に遷移される(setter/getter)//
 	public String getFamilyName() {
@@ -148,6 +155,13 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 	}
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	public String getErrorFamilyName() {
+		return errorFamilyName;
+	}
+	public void setErrorFamilyName(String errorFamilyName) {
+		this.errorFamilyName = errorFamilyName;
 	}
 
 	public String getGenderText() {
