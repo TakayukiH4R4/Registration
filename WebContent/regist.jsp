@@ -58,6 +58,10 @@
 	    padding-left: 5px;
 	}
 
+	.error-message {
+		color: red;
+	}
+
 	footer{
 	    clear:both;
 	    background-color: black;
@@ -66,6 +70,7 @@
 	    height:50px;
 	    line-height: 50px;
 	}
+
 
 </style>
 </head>
@@ -98,33 +103,53 @@
 				<td><input type="text" name="familyName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/>
 					<!-- 空欄だった場合のエラーメッセージ表示 -->
 					<s:if test="errorFamilyName != ''">
-						<br><s:property value="errorFamilyName" escape="false"/>
+						<span class="error-message"> <br><s:property value="errorFamilyName" escape="false"/> </span>
 					</s:if>
 				</td>
 			</tr>
 			<tr>
 				<td>名前（名）</td>
-				<td><input type="text" name="lastName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/></td>
+				<td><input type="text" name="lastName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value=""/>
+					<s:if test="errorLastName != ''">
+						<br><s:property value="errorLastName" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
 
 			<tr>
 				<td>カナ（姓）</td>
-				<td><input type="text" name="familyNameKana"  maxlength="10" pattern="^[ァ-ヶー]*$" value=""/></td>
+				<td><input type="text" name="familyNameKana"  maxlength="10" pattern="^[ァ-ヶー]*$" value=""/>
+					<s:if test="errorFamilyNameKana != ''">
+						<br><s:property value="errorFamilyNameKana" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
 
 			<tr>
 				<td>カナ（名）</td>
-				<td><input type="text" name="lastNameKana"  maxlength="10" pattern="^[ァ-ヶー]*$" value=""/></td>
+				<td><input type="text" name="lastNameKana"  maxlength="10" pattern="^[ァ-ヶー]*$" value=""/>
+					<s:if test="errorLastNameKana != ''">
+						<br><s:property value="errorLastNameKana" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
 
 			<tr>
 				<td>メールアドレス</td>
-				<td><input type="text" name="mail"  maxlength="100" pattern="^[a-zA-Z0-9-@.]*$" value=""/></td>
+				<td><input type="text" name="mail"  maxlength="100" pattern="^[a-zA-Z0-9-@.]*$" value=""/>
+					<s:if test="errorMail != ''">
+						<br><s:property value="errorMail" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
 
 			<tr>
 				<td>パスワード</td>
-				<td><input type="password" name="password" maxlength="10"  pattern="^[a-zA-Z0-9]*$" value=""/></td>
+				<td><input type="password" name="password" maxlength="10"  pattern="^[a-zA-Z0-9]*$" value=""/>
+					<s:if test="errorPassword != ''">
+						<br><s:property value="errorPassword" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
 
 			<tr>
@@ -137,7 +162,11 @@
 
 			<tr>
 				<td>郵便番号</td>
-				<td><input type="text" name="postalCode"  maxlength="7" pattern="^[0-9]*$" value=""/></td>
+				<td><input type="text" name="postalCode"  maxlength="7" pattern="^[0-9]*$" value=""/>
+					<s:if test="errorPostalCode != ''">
+						<br><s:property value="errorPostalCode" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
 
 			<tr>
@@ -192,17 +221,29 @@
 					    <option value="宮崎県">宮崎県</option>
 					    <option value="鹿児島県">鹿児島県</option>
 					    <option value="沖縄県">沖縄県</option>
-					</select></td>
+					</select>
+					<s:if test="errorPrefecture != ''">
+						<br><s:property value="errorPrefecture" escape="false"/>
+					</s:if>
+					</td>
 			</tr>
 
 			<tr>
 				<td>住所（市区町村）</td>
-				<td><input type="text" name="address1"  maxlength="10"  pattern="^[ぁ-んー一-龠々ァ-ヶー0-9- ]*$" value=""/></td>
+				<td><input type="text" name="address1"  maxlength="10"  pattern="^[ぁ-んー一-龠々ァ-ヶー0-9- ]*$" value=""/>
+					<s:if test="errorAddress1 != ''">
+						<br><s:property value="errorAddress1" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
 
 			<tr>
 				<td>住所（番地）</td>
-				<td><input type="text" name="address2"  maxlength="10" pattern="^[ぁ-んー一-龠々ァ-ヶー0-9- ]*$" value=""/></td>
+				<td><input type="text" name="address2"  maxlength="10" pattern="^[ぁ-んー一-龠々ァ-ヶー0-9- ]*$" value=""/>
+					<s:if test="errorAddress2 != ''">
+						<br><s:property value="errorAddress2" escape="false"/>
+					</s:if>
+				</td>
 			</tr>
 
 			<tr>
