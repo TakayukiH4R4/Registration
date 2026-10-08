@@ -144,7 +144,20 @@
 		</s:form>
 
 		<s:form action = "RegistAction">
-				<s:submit value="前に戻る" />
+			<s:hidden name="familyName"/>
+			<s:hidden name="lastName"/>
+			<s:hidden name="familyNameKana"/>
+			<s:hidden name="lastNameKana"/>
+			<s:hidden name="mail"/>
+			<s:hidden name="password"/>
+			<s:hidden name="gender"/>
+			<s:hidden name="postalCode"/>
+			<s:hidden name="prefecture"/>
+			<s:hidden name="address1"/>
+			<s:hidden name="address2"/>
+			<s:hidden name="authority"/>
+
+			<s:submit value="前に戻る" />
 		</s:form>
 
 </main>

@@ -145,7 +145,7 @@
 
 			<tr>
 				<td>パスワード</td>
-				<td><input type="password" name="password" maxlength="10"  pattern="^[a-zA-Z0-9]*$" value=""/>
+				<td><input type="password" name="password" maxlength="10"  pattern="^[a-zA-Z0-9]*$" value="<s:property value="password"/>"/>
 					<s:if test="errorPassword != ''">
 						<span class="error-message"><br><s:property value="errorPassword" escape="false"/></span>
 					</s:if>
@@ -155,8 +155,8 @@
 			<tr>
 				<td>性別</td>
 				<td>
-					<input type="radio" name="gender" value="0"  checked>男
-					<input type="radio" name="gender" value="1" >女
+					<input type="radio" name="gender" value="0"  <s:if test= 'gender != 1'>checked</s:if>>男
+					<input type="radio" name="gender" value="1"  <s:if test= 'gender == 1'>checked</s:if>>女
 				</td>
 			</tr>
 
@@ -251,8 +251,8 @@
 				<td>アカウント権限</td>
 				<td>
 					<select name ="authority">
-						<option value="0">一般</option>
-						<option value="1">管理者</option>
+						<option value="0" >一般</option>
+						<option value="1" <s:if test=' authority == 1'>selected</s:if>>管理者</option>
 					</select>
 				</td>
 			</tr>

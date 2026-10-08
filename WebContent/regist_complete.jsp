@@ -53,9 +53,9 @@
 	}
 
 	h1{
-	    border-left: solid 5px black;
-	    border-bottom: solid 2px black;
-	    padding-left: 5px;
+	    text-align: center;
+	    font-size:100px;
+	    padding: 50px;
 	}
 
 	footer{
@@ -87,8 +87,10 @@
 </header>
 
 <main>
-<h1>登録完了</h1>
-
+<h1>登録完了しました</h1>
+<s:form action="GoHomeAction">
+	<s:submit value="TOPページに戻る"/>
+</s:form>
 </main>
 
     <footer>

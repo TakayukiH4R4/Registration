@@ -35,7 +35,7 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 		session.get("mail").toString(),
 		session.get("password").toString(),
 		(Integer)session.get("gender"),
-		(Integer)session.get("postalCode"),
+		(Integer)session.get("postalCode"),//これをstring型からint型に変換して渡せばいいのでは？
 		session.get("prefecture").toString(),
 		session.get("address1").toString(),
 		session.get("address2").toString(),
