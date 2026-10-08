@@ -44,12 +44,10 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 			!(lastNameKana.equals(""))&&
 			!(mail.equals(""))&&
 			!(password.equals(""))&&
-			!(gender == 0)&&
 			!(postalCode == 0)&&
 			!(prefecture.equals(""))&&
 			!(address1.equals(""))&&
-			!(address2.equals(""))&&
-			!(authority == 0)) {
+			!(address2.equals("")))	{
 		session.put("familyName",familyName);
 		session.put("lastName", lastName);
 		session.put("familyNameKana", familyNameKana);
