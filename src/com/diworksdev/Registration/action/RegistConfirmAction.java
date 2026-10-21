@@ -14,7 +14,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 	private String mail;
 	private String password;
 	private int gender;
-	private int postalCode;
+	private String postalCode;
 	private String prefecture;
 	private String address1;
 	private String address2;
@@ -44,7 +44,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 			!(lastNameKana.equals(""))&&
 			!(mail.equals(""))&&
 			!(password.equals(""))&&
-			!(postalCode == 0)&&
+			!(postalCode.equals(""))&&
 			!(prefecture.equals(""))&&
 			!(address1.equals(""))&&
 			!(address2.equals("")))	{
@@ -84,7 +84,7 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 		if(password.equals("")) {
 			errorPassword="パスワ－ドが未入力です。";
 		}
-		if(postalCode == 0) {
+		if(postalCode.equals("")) {
 			errorPostalCode="郵便番号が未入力です。";
 		}
 		if(prefecture.equals("")) {
@@ -150,10 +150,10 @@ public class RegistConfirmAction extends ActionSupport implements SessionAware {
 		this.gender = gender;
 	}
 
-	public int getPostalCode() {
+	public String getPostalCode() {
 		return postalCode;
 	}
-	public void setPostalCode(int postalCode) {
+	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
 

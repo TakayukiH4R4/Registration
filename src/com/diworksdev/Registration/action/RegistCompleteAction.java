@@ -16,7 +16,7 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 	public String mail;
 	public String password;
 	public int gender;
-	public int postalCode;
+	public String postalCode;
 	public String prefecture;
 	public String address1;
 	public String address2;
@@ -35,7 +35,7 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 		session.get("mail").toString(),
 		session.get("password").toString(),
 		(Integer)session.get("gender"),
-		(Integer)session.get("postalCode"),//これをstring型からint型に変換して渡せばいいのでは？
+		Integer.parseInt(session.get("postalCode").toString()),//これをstring型からint型に変換して渡せばいいのでは？
 		session.get("prefecture").toString(),
 		session.get("address1").toString(),
 		session.get("address2").toString(),
@@ -95,10 +95,10 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 	    this.gender = gender;
 	}
 	// postalCode
-	public int getPostalCode() {
+	public String getPostalCode() {
 	    return postalCode;
 	}
-	public void setPostalCode(int postalCode) {
+	public void setPostalCode(String postalCode) {
 	    this.postalCode = postalCode;
 	}
 	// prefecture

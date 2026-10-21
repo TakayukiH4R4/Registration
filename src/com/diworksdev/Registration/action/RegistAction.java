@@ -14,7 +14,7 @@ public class RegistAction extends ActionSupport {
 	private String mail;
 	private String password;
 	private int gender;
-	private int postalCode;
+	private String postalCode;
 	private String prefecture;
 	private String address1;
 	private String address2;
@@ -70,10 +70,10 @@ public class RegistAction extends ActionSupport {
 		this.gender = gender;
 	}
 
-	public int getPostalCode() {
+	public String getPostalCode() {
 		return postalCode;
 	}
-	public void setPostalCode(int postalCode) {
+	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
 
