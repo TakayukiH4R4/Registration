@@ -27,17 +27,7 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 
 	public String execute() throws SQLException {
 
-	//エラー画面遷移のテスト
-	try {
-		throw new SQLException("接続エラーのテスト");
-
-	} catch (SQLException e) {
-		e.printStackTrace();
-		return ERROR;
-	}
-	}
-
-/*		try{
+	try{
 			registCompleteDAO.createUser(
 				session.get("familyName").toString(),
 				session.get("lastName").toString(),
@@ -46,7 +36,7 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 				session.get("mail").toString(),
 				session.get("password").toString(),
 				(Integer)session.get("gender"),
-				Integer.parseInt(session.get("postalCode").toString()),//これをstring型からint型に変換して渡せばいいのでは？
+				Integer.parseInt(session.get("postalCode").toString()),
 				session.get("prefecture").toString(),
 				session.get("address1").toString(),
 				session.get("address2").toString(),
@@ -59,7 +49,7 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 			return ERROR;
 		}
 	}
-*/
+
 	// familyName
 	public String getFamilyName() {
 	    return familyName;
