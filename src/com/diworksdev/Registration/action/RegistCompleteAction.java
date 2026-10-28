@@ -27,22 +27,29 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 
 	public String execute() throws SQLException {
 
-		registCompleteDAO.createUser(
-		session.get("familyName").toString(),
-		session.get("lastName").toString(),
-		session.get("familyNameKana").toString(),
-		session.get("lastNameKana").toString(),
-		session.get("mail").toString(),
-		session.get("password").toString(),
-		(Integer)session.get("gender"),
-		Integer.parseInt(session.get("postalCode").toString()),//これをstring型からint型に変換して渡せばいいのでは？
-		session.get("prefecture").toString(),
-		session.get("address1").toString(),
-		session.get("address2").toString(),
-		(Integer)session.get("authority")
-		);
 
-		return SUCCESS;
+
+	try{	registCompleteDAO.createUser(
+				session.get("familyName").toString(),
+				session.get("lastName").toString(),
+				session.get("familyNameKana").toString(),
+				session.get("lastNameKana").toString(),
+				session.get("mail").toString(),
+				session.get("password").toString(),
+				(Integer)session.get("gender"),
+				Integer.parseInt(session.get("postalCode").toString()),//これをstring型からint型に変換して渡せばいいのでは？
+				session.get("prefecture").toString(),
+				session.get("address1").toString(),
+				session.get("address2").toString(),
+				(Integer)session.get("authority")
+			);
+		String result = SUCCESS;
+		return result;
+
+	} catch (SQLException e) {
+		String result = ERROR;
+		return result;
+	}
 	}
 
 	// familyName

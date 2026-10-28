@@ -100,7 +100,7 @@
 		<s:form action="RegistConfirmAction">
 			<tr>
 				<td>名前（姓）</td>
-				<td><input type="text" name="familyName"  maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value="<s:property value="familyName"/>" />
+				<td><input type="text" name="familyName" maxlength="10" pattern="^[ぁ-んー一-龠々]*$" value="<s:property value="familyName"/>" />
 					<!-- 空欄だった場合のエラーメッセージ表示 -->
 					<s:if test="errorFamilyName != ''">
 						<span class="error-message"> <br><s:property value="errorFamilyName" escape="false"/> </span>
