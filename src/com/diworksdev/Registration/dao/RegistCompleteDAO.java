@@ -37,7 +37,7 @@ public class RegistCompleteDAO {
 				preparedStatement.setInt(12, authority);
 				preparedStatement.setString(13, dateUtil.getDate());
 				preparedStatement.executeUpdate();
-			} catch (Exception e) {
+			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
 				connection.close();

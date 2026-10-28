@@ -27,9 +27,18 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 
 	public String execute() throws SQLException {
 
+	//エラー画面遷移のテスト
+	try {
+		throw new SQLException("接続エラーのテスト");
 
+	} catch (SQLException e) {
+		e.printStackTrace();
+		return ERROR;
+	}
+	}
 
-	try{	registCompleteDAO.createUser(
+/*		try{
+			registCompleteDAO.createUser(
 				session.get("familyName").toString(),
 				session.get("lastName").toString(),
 				session.get("familyNameKana").toString(),
@@ -43,15 +52,14 @@ public class RegistCompleteAction extends ActionSupport implements SessionAware 
 				session.get("address2").toString(),
 				(Integer)session.get("authority")
 			);
-		String result = SUCCESS;
-		return result;
+			return SUCCESS;
 
-	} catch (SQLException e) {
-		String result = ERROR;
-		return result;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return ERROR;
+		}
 	}
-	}
-
+*/
 	// familyName
 	public String getFamilyName() {
 	    return familyName;
